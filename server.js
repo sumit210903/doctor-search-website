@@ -29,3 +29,7 @@ app.use('/api/contact', require('./routes/contact'));
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+app.use((req, res) => {
+  res.status(404).json({ error: 'Route not found' });
+});
+
